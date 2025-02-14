@@ -3,54 +3,63 @@
     font-weight: 400;
     font-style: normal;
 }
-.container{
+
+.container {
     width: 80%;
 }
-.logo{
+
+.logo {
     height: 80px;
 }
-.carousel-item{
+
+.carousel-item {
     background-color: pink;
     padding: 40px;
     display: flex;
     justify-content: center;
     justify-items: center;
 }
-img{
+
+img {
     width: 30%;
     align-items: center;
     border-radius: 5px;
 }
 
-.slideImge{
+.slideImge {
     width: 120px;
     height: 100px;
 }
-.TitleContent{
+
+.TitleContent {
     padding: 10px;
 }
-.title1{
+
+.title1 {
     font-size: 60px;
     font-weight: bold;
 }
-.title2{
+
+.title2 {
     font-size: 40px;
 }
-@media (max-width: 600px) {
-    *{
-        background-color: red;
-    }
 
-    .top-text{
+
+/* ......................................................... */
+@media (max-width: 600px) {
+    .top-text {
         font-size: 10px;
     }
-    .title1{
+
+    .title1 {
         font-size: 30px;
     }
-    .title2{
+
+    .title2 {
         font-size: 20px;
     }
-    .slideImge{
+
+    .slideImge {
         width: 80px;
         height: 40px;
     }
