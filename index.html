@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rakib store</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.23/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Oswald:wght@200..700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <section>
+        <nav>
+            <div class="navbar bg-blue-500">
+                <div class="navbar-start">
+                    <div class="dropdown">
+                        <div tabindex="0" role="button" class="btn btn-ghost lg:hidden xlg:hidden sm:hidden">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M4 6h16M4 12h8m-8 6h16" />
+                            </svg>
+                        </div>
+                        <ul tabindex="0"
+                            class="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
+                            <li><a>Item 1</a></li>
+                            <li>
+                                <a>Parent</a>
+                                <ul class="p-2">
+                                    <li><a>Submenu 1</a></li>
+                                    <li><a>Submenu 2</a></li>
+                                </ul>
+                            </li>
+                            <li><a>Item 3</a></li>
+                        </ul>
+                    </div>
+                    <img src="photo/logo-removebg-preview.png" class="logo" alt="">
+                </div>
+                <div class="navbar-center hidden sm:flex">
+                    <ul class="menu menu-horizontal px-1">
+                        <li><a>Item 1</a></li>
+                        <li>
+                            <details>
+                                <summary>Parent</summary>
+                                <ul class="p-2">
+                                    <li><a>Submenu 1</a></li>
+                                    <li><a>Submenu 2</a></li>
+                                </ul>
+                            </details>
+                        </li>
+                        <li><a>Item 3</a></li>
+                    </ul>
+                </div>
+                <div class="navbar-end">
+                    <a class="btn">Button</a>
+                </div>
+            </div>
+        </nav>
+    </section>
+    <section>
+        <div>
+            <div class="carousel w-full">
+                <div id="item1" class="carousel-item w-full">
+                    <img src="photo/jilafi.jpg" class="w-sm" />
+                    <div class="TitleContent">
+                        <h1 class="title1">জিলাফি</h1>
+                        <h3 class="title2">গরম গরম তাজা পাওয়া যায়</h3>
+                    </div>
+                </div>
+                <div id="item2" class="carousel-item w-full">
+                    <img src="photo/singora.jpg" class="w-sm" />
+                    <div class="TitleContent">
+                        <h1 class="title1">জিলাফি</h1>
+                        <h3 class="title2">গরম গরম তাজা পাওয়া যায়</h3>
+                    </div>
+                </div>
+                <div id="item3" class="carousel-item w-full">
+                    <img src="photo/somuca.jpeg" class="w-sm" />
+                    <div class="TitleContent">
+                        <h1 class="title1">জিলাফি</h1>
+                        <h3 class="title2">গরম গরম তাজা পাওয়া যায়</h3>
+                    </div>
+                </div>
+                <div id="item4" class="carousel-item w-full">
+                    <img src="photo/potota3.jpg" class="w-sm" />
+                    <div class="TitleContent">
+                        <h1 class="title1">জিলাফি</h1>
+                        <h3 class="title2">গরম গরম তাজা পাওয়া যায়</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="flex w-full justify-center gap-2 py-2 carouselSlide">
+                <a href="#item1"> <img src="photo/jilafi.jpg" class="w-sm slideImge" /></a>
+                <a href="#item2"> <img src="photo/singora.jpg" class="w-sm slideImge" /></a>
+                <a href="#item3"> <img src="photo/somuca.jpeg" class="w-sm slideImge" /></a>
+                <a href="#item4"> <img src="photo/potota3.jpg" class="w-sm slideImge" /></a>
+            </div>
+        </div>
+    </section>
+    <section>
+        <h1 class="text-3xl p-4 m-12 font-bold">আপনি কি খেতে চান?</h1>
+        <div>
+            <div class="grid  lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-4 justify-center justify-items-center">
+                <div>
+                    <div class="card bg-base-100 w-96 shadow-xl gb-red-500 p-2">
+                        <figure>
+                            <img src="photo/anguli2.jpeg" class="w-full" alt="Shoes" />
+                        </figure>
+                        <div class="card-body">
+                            <h2 class="card-title">Shoes!</h2>
+                            <p>If a dog chews shoes whose shoes does he choose?</p>
+                            <div class="card-actions justify-end">
+                                <button class="btn btn-primary">Buy Now</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- ... -->
+                <div>
+                    <div class="card bg-base-100 w-96 shadow-xl gb-red-500 p-2">
+                        <figure>
+                            <img src="photo/anguli2.jpeg" class="w-full" alt="Shoes" />
+                        </figure>
+                        <div class="card-body">
+                            <h2 class="card-title">Shoes!</h2>
+                            <p>If a dog chews shoes whose shoes does he choose?</p>
+                            <div class="card-actions justify-end">
+                                <button class="btn btn-primary">Buy Now</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- ... -->
+                <div>
+                    <div class="card bg-base-100 w-96 shadow-xl gb-red-500 p-2">
+                        <figure>
+                            <img src="photo/anguli2.jpeg" class="w-full" alt="Shoes" />
+                        </figure>
+                        <div class="card-body">
+                            <h2 class="card-title">Shoes!</h2>
+                            <p>If a dog chews shoes whose shoes does he choose?</p>
+                            <div class="card-actions justify-end">
+                                <button class="btn btn-primary">Buy Now</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- ... -->
+            </div>
+            <!-- .................................. -->
+            <div class="grid  lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-4 justify-center justify-items-center">
+                <div>
+                    <div class="card bg-base-100 w-96 shadow-xl gb-red-500 p-2">
+                        <figure>
+                            <img src="photo/anguli2.jpeg" class="w-full" alt="Shoes" />
+                        </figure>
+                        <div class="card-body">
+                            <h2 class="card-title">Shoes!</h2>
+                            <p>If a dog chews shoes whose shoes does he choose?</p>
+                            <div class="card-actions justify-end">
+                                <button class="btn btn-primary">Buy Now</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- ... -->
+                <div>
+                    <div class="card bg-base-100 w-96 shadow-xl gb-red-500 p-2">
+                        <figure>
+                            <img src="photo/anguli2.jpeg" class="w-full" alt="Shoes" />
+                        </figure>
+                        <div class="card-body">
+                            <h2 class="card-title">Shoes!</h2>
+                            <p>If a dog chews shoes whose shoes does he choose?</p>
+                            <div class="card-actions justify-end">
+                                <button class="btn btn-primary">Buy Now</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- ... -->
+                <div>
+                    <div class="card bg-base-100 w-96 shadow-xl gb-red-500 p-2">
+                        <figure>
+                            <img src="photo/anguli2.jpeg" class="w-full" alt="Shoes" />
+                        </figure>
+                        <div class="card-body">
+                            <h2 class="card-title">Shoes!</h2>
+                            <p>If a dog chews shoes whose shoes does he choose?</p>
+                            <div class="card-actions justify-end">
+                                <button class="btn btn-primary">Buy Now</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- ... -->
+            </div>
+
+        </div>
+    </section>
+</body>
+
+</html>
