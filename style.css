@@ -1,66 +1,104 @@
-.anton-regular {
-    font-family: "Anton", serif;
-    font-weight: 400;
-    font-style: normal;
+* {
+    margin: 0px;
+    padding: 0px;
 }
 
-.container {
+body {
+    background-color: whitesmoke;
+}
+
+section {
     width: 80%;
+    margin: auto;
 }
 
-.logo {
-    height: 80px;
+.navigationSection {
+    background-color: white;
+    color: black;
+    box-shadow: 10px 10px 15px rgb(224, 35, 35);
+    border-radius: 5px;
+    padding: 0px 5px;
 }
 
-.carousel-item {
-    background-color: pink;
-    padding: 40px;
+.innerNav {
     display: flex;
-    justify-content: center;
-    justify-items: center;
+    justify-content: space-between;
 }
 
-img {
-    width: 30%;
+.logoSide>img {
+    width: 100px;
+    /* padding: 0px; */
+}
+
+.menuSide ul {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    padding: 40px 0px;
+}
+
+.menuSide ul li {
+    font-size: large;
+    font-weight: bold;
+    position: relative;
+}
+
+.menuSide ul li a::after {
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 3px;
+    background-color: red;
+    top: 25px;
+    left: 0px;
+    z-index: 2px;
+    transition: 0.5s;
+}
+
+.menuSide ul li a:hover::after {
+    width: 100%;
+}
+
+#menuBar {
+    font-size: 26px;
+    display: flex;
     align-items: center;
+    justify-content: center;
+    padding: 10px;
+    display: none;
+}
+
+@media only screen and (max-width: 600px) {
+    section{
+        width: 100%;
+    }
+    .logoSide>img {
+        width: 70px;
+    }
+    #menuBar {
+        font-size: 26px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding-top: 10px;
+        display: block;
+    }
+    .menuSide ul {
+        display: flex;
+        flex-direction: column;
+        margin-top: -300px;
+        align-items: flex-end;
+        margin-right: -200px;
+    }
+}
+
+#deleteMenu{
+    color: rgb(224, 35, 35);
+    background-color: pink;
+    padding: 5px 20px;
     border-radius: 5px;
 }
-
-.slideImge {
-    width: 120px;
-    height: 100px;
-}
-
-.TitleContent {
-    padding: 10px;
-}
-
-.title1 {
-    font-size: 60px;
-    font-weight: bold;
-}
-
-.title2 {
-    font-size: 40px;
-}
-
-
-/* ......................................................... */
-@media screen and (max-width: 600px) {
-    .top-text {
-        font-size: 10px;
-    }
-
-    .title1 {
-        font-size: 30px;
-    }
-
-    .title2 {
-        font-size: 20px;
-    }
-
-    .slideImge {
-        width: 80px;
-        height: 40px;
-    }
+#deleteMenu:hover{
+    background-color: red;
+    color: black;
 }
