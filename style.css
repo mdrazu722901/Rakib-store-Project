@@ -123,6 +123,11 @@ section {
         align-items: flex-end;
         margin-right: -150px;
     }
+    .menuSide ul li {
+        font-size: 15px;
+        font-weight: bold;
+        position: relative;
+    }
     #user{
         display: none;
         margin-right: -10ox;
