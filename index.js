@@ -4,7 +4,7 @@ document.getElementById("menuBarIcon").addEventListener("click", function () {
     menuBar.style.marginRight = "-300px";
 
     const menu = document.getElementById("menu");
-    menu.style.marginLeft = "-180px";
+    menu.style.marginLeft = "-150px";
     menu.style.transition = "1s";
     menu.style.position = "relative"
 
@@ -26,7 +26,7 @@ document.getElementById("deleteMenu").addEventListener("click", function () {
     const menuBar = document.getElementById("menuBar");
     menuBar.style.display = "block";
     menuBar.style.marginRight = "30px";
-    menuBar.style.transition = "1s";
+    menuBar.style.transition = "0.1s";
 
     const menu = document.getElementById("menu");
     menu.style.marginLeft = "-400px";
