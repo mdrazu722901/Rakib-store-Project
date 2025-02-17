@@ -223,7 +223,12 @@ figure {
 
 
 /* ........................................................ */
- @media only screen and (max-width: 600px) {
+@media only screen and (max-width: 600px) {
+    body {
+        background-color: whitesmoke;
+        overflow: hidden;
+    }
+
     section {
         width: 100%;
     }
