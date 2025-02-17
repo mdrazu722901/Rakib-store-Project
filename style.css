@@ -24,7 +24,7 @@ body {
 
 .innerNav {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
 }
 
 .logoSide>img {
@@ -72,11 +72,12 @@ body {
 }
 
 .user {
-    color: black;
-    height: 20px;
+    color: wheat;
     margin-top: 35px;
     padding: 10px;
     border-radius: 20px;
+    background-color: blue;
+    margin-right: -300px;
 }
 
 .user1 {
@@ -92,7 +93,7 @@ body {
     color: wheat;
     display: none;
     position: absolute;
-    top: 170px;
+    top: 150px;
     left: -400px;
     padding: 4px 5px 4px 2px;
     background-color: blue;
@@ -139,12 +140,25 @@ body {
         font-weight: bold;
         position: relative;
     }
-
-    #user {
+    .userSide {
+        color: black;
+        height: 20px;
+        margin-top: 35px;
+        padding: 10px;
+        border-radius: 20px;
         display: none;
-        margin-right: -10ox;
-        display: flex;
-        justify-content: start;
     }
+}
 
+.container{
+    display: flex;
+    width: 5000px;
+    text-align: center;
+}
+.wrapper{
+    width: 1300px;
+    background-color: red;
+}
+@keyframes wrapper{
+   0%{transform: translateX(0%);}
 }

@@ -21,7 +21,7 @@ document.getElementById("menuBarIcon").addEventListener("click", function () {
 
 
 document.getElementById("deleteMenu").addEventListener("click", function () {
-
+    document.getElementById("deleteMenu").style.display = "none";
 
     const menuBar = document.getElementById("menuBar");
     menuBar.style.display = "block";
@@ -35,5 +35,5 @@ document.getElementById("deleteMenu").addEventListener("click", function () {
 
     const user = document.getElementById("user");
     user.style.display = "none";
-    document.getElementById("deleteMenu").style.display = "none"
+
 })
