@@ -68,7 +68,7 @@ body {
     align-items: center;
     justify-content: center;
     margin-top: 20px;
-    display: none !important;
+    display: none;
     position: absolute;
     right: 30px;
 }
@@ -127,7 +127,7 @@ body {
 }
 
 .slider {
-    width: 100%;
+    width: 102%;
     height: 500px;
     overflow: hidden;
 }
@@ -224,11 +224,6 @@ figure {
 
 /* ........................................................ */
 @media only screen and (max-width: 600px) {
-    body {
-        background-color: whitesmoke;
-        overflow: hidden;
-    }
-
     section {
         width: 100%;
     }
@@ -243,7 +238,7 @@ figure {
         align-items: center;
         justify-content: space-between;
         padding-top: 10px;
-        display: block !important;
+        display: block;
     }
 
     .menuSide ul {
