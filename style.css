@@ -22,7 +22,7 @@ body {
     padding: 0px 5px;
     position: fixed;
     z-index: 2;
-    width: 98%;
+    width: 100%;
     /* right: 10px; */
 }
 
@@ -114,6 +114,7 @@ body {
 .slideSection {
     position: relative;
     top: 100px;
+    right: -30px;
 }
 
 .container {
