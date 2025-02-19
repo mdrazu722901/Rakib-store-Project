@@ -283,24 +283,42 @@ button:hover {
     transform: scale(1.1);
 }
 
-.contect {
+.contact {
     background-color: palevioletred;
     padding: 5px 10px;
     margin-top: 10px;
 }
 
-input {
-    height: 40px;
+.contactDiv {
     display: flex;
+    justify-content: space-between;
+    align-items: center;
     flex-wrap: wrap;
+    gap: 46px;
+}
+
+.map>iframe {
+    /* padding: 50px; */
+    width: 100%;
+    height: 300px;
+}
+
+/* .map {
+    width: 50%;
+} */
+
+form {
+    width: 50%;
 }
 
 input,
 textarea {
-    width: 500px;
-    background-color: #fff2ff;
+    width: 100%;
+    padding: 10px 10px;
+    color: aqua;
     border-radius: 5px;
-    margin-top: 15px;
+    outline: none;
+    border: none;
 }
 
 .contactDiv {
@@ -308,15 +326,22 @@ textarea {
     justify-content: center;
     align-items: center;
     margin-top: 20px;
+    align-items: center;
+    justify-content: center;
 }
-
+.paments-section{
+    background-image: url(photo/background.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
 .paments-section-div {
     display: flex;
     justify-content: space-around;
     align-items: center;
     flex-wrap: wrap;
     padding-top: 50px;
-    background-color: blueviolet;
+    /* background-color: blueviolet; */
 }
 
 .pamentsAndLocation p {
@@ -337,7 +362,68 @@ textarea {
     align-items: center;
     flex-wrap: wrap;
 }
+.mainContectSide i{
+    color: red;
+    margin-right: 5px;
+}
+.mainContectSide p{
+    color: pink;
+}
+.socialMediaIcon {}
 
+.fa-brands {
+    font-size: 30px;
+    padding: 10px;
+    transition: 0.5s;
+}
+.fa-brands:hover{
+    transform: translateY(-10px);
+}
+.fa-facebook {
+    color: blue;
+}
+
+.fa-youtube {
+    color: rgb(224, 35, 35);
+}
+
+.fa-square-whatsapp {
+    color: saddlebrown;
+}
+
+.fa-linkedin {
+    color: gray;
+}
+.bkash{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0px 10px;
+    border: 1px solid pink;
+    border-radius: 10px;
+    padding: 0px 5px 0px 0px;
+    background-color: gray;
+    box-shadow: 2px 2px 2px black;
+    position: relative;
+    top: -40px;
+    left: -50px;
+}
+.bkash > img{
+    width: 60px;
+    height: 45px;
+}
+.bkash > p{
+    font-size: 40px;
+    color: wheat;
+    padding: 0px;
+}
+#bkashNo{
+    color: white;
+    font-size: 30px;
+    position: relative;
+    top: -30px;
+    left: -40px;
+}
 /* ........................................................ */
 @media only screen and (max-width: 600px) {
     .logoSide>img {

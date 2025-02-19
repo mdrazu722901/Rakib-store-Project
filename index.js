@@ -34,4 +34,8 @@ document.getElementById("deleteMenu").addEventListener("click", function () {
     const user = document.getElementById("user");
     user.style.display = "none";
 
-})
+});
+
+
+
+// ..............................................
