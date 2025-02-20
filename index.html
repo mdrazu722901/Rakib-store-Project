@@ -12,18 +12,18 @@
 </head>
 
 <body>
-    <section class="navigationSection">
-        <nav class="mainContant">
+    <section class="navigationSection" id="home">
+        <nav class="mainContant position-set">
             <div class="innerNav">
                 <div class="logoSide">
                     <img src="photo/logo-removebg-preview.png" alt="">
                 </div>
                 <div class="menuSide">
                     <ul id="menu">
-                        <li><a href="">Home</a></li>
-                        <li><a href="">About</a></li>
-                        <li><a href="">Services</a></li>
-                        <li><a href="">contact</a></li>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#product">Product</a></li>
+                        <li><a href="#contace">contact</a></li>
                     </ul>
                 </div>
                 <div class="userSide">
@@ -32,12 +32,14 @@
                 <div id="menuBar">
                     <i class="fa-solid fa-bars" id="menuBarIcon"></i>
                 </div>
-                <div class="deleteIcon">
-                    <i class="fa-solid fa-delete-left" id="deleteMenu"></i>
-                </div>
+            </div>
+            <div class="deleteIcon">
+                <i class="fa-solid fa-delete-left" id="deleteMenu"></i>
             </div>
         </nav>
+
     </section>
+
     <section class="slideSection">
         <div class="slider">
             <figure>
@@ -67,7 +69,7 @@
             </div>
         </div>
     </section>
-    <section class="itemSection">
+    <section class="itemSection" id="product">
         <div class="allItemCard mainContant">
             <div class="card">
                 <img src="photo/nimki.jpg" alt="">
@@ -161,7 +163,7 @@
             </div>
         </div>
     </section>
-    <section class="contact">
+    <section class="contact" id="contace">
         <div class="contactDiv">
             <div class="map">
                 <iframe
@@ -170,18 +172,18 @@
                     referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
             <form action="">
-                <label for="Name"></label><br>
+                <label for="Name">নাম</label><br>
                 <input type="text"><br>
-                <label for="Name">Name</label><br>
+                <label for="Name">মোবাইল</label><br>
                 <input type="text"><br>
-                <label for="Name">Name</label><br>
+                <label for="Name">ই-মেইল</label><br>
                 <input type="text"><br>
-                <label for="Name">Name</label><br>
+                <label for="Name">আপনার মূল্যবান মন্তব্য</label><br>
                 <textarea name="" id="" cols="30" rows="10"></textarea>
             </form>
         </div>
     </section>
-    <section class="paments-section">
+    <section class="paments-section" id="about">
         <div class="paments-section-div">
             <div class="pamentsAndLocation">
                 <div class="bkash">

@@ -14,6 +14,10 @@ body {
     margin: auto;
 }
 
+.nav {
+    position: relative;
+}
+
 .navigationSection {
     background-color: white;
     color: black;
@@ -23,12 +27,12 @@ body {
     position: fixed;
     z-index: 2;
     width: 100%;
-    /* right: 10px; */
 }
 
 .innerNav {
     display: flex;
     justify-content: space-around;
+    /* position: relative; */
 }
 
 .logoSide>img {
@@ -94,15 +98,14 @@ body {
     position: absolute;
 }
 
-#deleteMenu {
-    color: wheat;
+.deleteIcon>i {
+    color: black;
     display: none;
-    position: absolute;
-    top: 150px;
-    left: -400px;
-    padding: 4px 5px 4px 2px;
-    background-color: blue;
+    font-size: 20px;
     border-radius: 50%;
+    position: absolute;
+    bottom: 0px;
+    left: -100px;
 }
 
 #deleteMenu:hover {
@@ -114,7 +117,7 @@ body {
 .slideSection {
     position: relative;
     top: 100px;
-    right: -30px;
+    left: 0px;
 }
 
 .container {
@@ -298,14 +301,9 @@ button:hover {
 }
 
 .map>iframe {
-    /* padding: 50px; */
     width: 100%;
     height: 300px;
 }
-
-/* .map {
-    width: 50%;
-} */
 
 form {
     width: 50%;
@@ -329,12 +327,14 @@ textarea {
     align-items: center;
     justify-content: center;
 }
-.paments-section{
+
+.paments-section {
     background-image: url(photo/background.jpg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
 }
+
 .paments-section-div {
     display: flex;
     justify-content: space-around;
@@ -349,36 +349,39 @@ textarea {
 }
 
 .footer {
-    background-color: red;
+    background-color: rgb(181, 78, 4);
     padding: 10px;
 }
 
 .footerSection {
     display: flex;
-    color: wheat;
-    /* font-size: 18px; */
+    color: white;
     font-weight: bold;
     justify-content: space-evenly;
     align-items: center;
     flex-wrap: wrap;
 }
-.mainContectSide i{
+
+.mainContectSide i {
     color: red;
     margin-right: 5px;
 }
-.mainContectSide p{
+
+.mainContectSide p {
     color: pink;
 }
-.socialMediaIcon {}
+
 
 .fa-brands {
     font-size: 30px;
     padding: 10px;
     transition: 0.5s;
 }
-.fa-brands:hover{
+
+.fa-brands:hover {
     transform: translateY(-10px);
 }
+
 .fa-facebook {
     color: blue;
 }
@@ -388,51 +391,56 @@ textarea {
 }
 
 .fa-square-whatsapp {
-    color: saddlebrown;
+    color: rgb(181, 78, 4);
 }
 
 .fa-linkedin {
     color: gray;
 }
-.bkash{
+
+.bkash {
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 0px 10px;
-    border: 1px solid pink;
-    border-radius: 10px;
+    /* border: 1px solid pink; */
+    border-radius: 6px 10px 10px 6px;
     padding: 0px 5px 0px 0px;
-    background-color: gray;
+    background-color: #d92a36;
     box-shadow: 2px 2px 2px black;
     position: relative;
     top: -40px;
     left: -50px;
 }
-.bkash > img{
+
+.bkash>img {
     width: 60px;
-    height: 45px;
+    height: 50px;
 }
-.bkash > p{
+
+.bkash>p {
     font-size: 40px;
     color: wheat;
     padding: 0px;
 }
-#bkashNo{
+
+#bkashNo {
     color: white;
     font-size: 30px;
     position: relative;
     top: -30px;
     left: -40px;
 }
+
 /* ........................................................ */
 @media only screen and (max-width: 600px) {
     .logoSide>img {
-        width: 70px;
+        width: 100px;
         margin-left: -70px;
     }
 
     #menuBar {
-        font-size: 25px;
+        font-size: 40px;
         display: flex;
         align-items: center;
         padding-top: 10px;
@@ -442,8 +450,8 @@ textarea {
     .menuSide ul {
         display: flex;
         flex-direction: column;
-        margin-left: -400px;
-        margin-top: 55px;
+        margin-left: -800px;
+        margin-top: 80px;
         padding: 15px;
         gap: 16px;
         font-family: 'Courier New', Courier, monospace;
@@ -452,7 +460,7 @@ textarea {
     }
 
     .menuSide ul li {
-        font-size: 15px;
+        font-size: 30px;
         font-weight: bold;
         position: relative;
     }
@@ -490,5 +498,17 @@ textarea {
     .slide img {
         width: 100%;
         height: 350px;
+    }
+
+    .contactDiv {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    form {
+        width: 80%;
     }
 }
