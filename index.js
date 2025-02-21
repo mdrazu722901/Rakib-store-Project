@@ -27,7 +27,7 @@ document.getElementById("deleteMenu").addEventListener("click", function () {
 
 
     const menu = document.getElementById("menu");
-    menu.style.marginLeft = "-400px";
+    menu.style.marginLeft = "-800px";
     menu.style.transition = "0.1s";
     menu.style.position = "absolute"
 
@@ -38,4 +38,11 @@ document.getElementById("deleteMenu").addEventListener("click", function () {
 
 
 
-// ..............................................
+// ..............................................order kori javaScript code.........
+
+document.getElementsByClassName("orderBtn").addEventListener("click", function(){
+    console.log("click me")
+});
+
+let orderKori = document.getElementsByClassName("orderBtn");
+console.log(orderKori, "order");
