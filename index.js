@@ -37,12 +37,32 @@ document.getElementById("deleteMenu").addEventListener("click", function () {
 });
 
 
+function menuClick() {
+    if (screen.width === 600 || screen.width < 600) {
+        console.log("width 600 caught")
+        document.getElementById("deleteMenu").style.display = "none";
+
+        const menuBar = document.getElementById("menuBar");
+        menuBar.style.display = "block";
+
+
+        const menu = document.getElementById("menu");
+        menu.style.marginLeft = "-800px";
+        menu.style.transition = "0.1s";
+        menu.style.position = "absolute"
+
+        const user = document.getElementById("user");
+        user.style.display = "none";
+    }
+
+}
+// console.log(screen.width, "check screen width")
 
 // ..............................................order kori javaScript code.........
 
-document.getElementsByClassName("orderBtn").addEventListener("click", function(){
-    console.log("click me")
-});
+// document.getElementsByClassName("orderBtn").addEventListener("click", function () {
+//     console.log("click me")
+// });
 
-let orderKori = document.getElementsByClassName("orderBtn");
-console.log(orderKori, "order");
+// let orderKori = document.getElementsByClassName("orderBtn");
+// console.log(orderKori, "order");
