@@ -56,13 +56,81 @@ function menuClick() {
     }
 
 }
-// console.log(screen.width, "check screen width")
+
 
 // ..............................................order kori javaScript code.........
 
-// document.getElementsByClassName("orderBtn").addEventListener("click", function () {
-//     console.log("click me")
-// });
+let orderbtns = document.querySelectorAll(".orderBtn");
+// console.log(orderbtns);
+for (const element of orderbtns) {
+    element.addEventListener("click", function (e) {
+        // console.log(e.target.parentNode.children);
+        let orderItems = e.target.parentNode.children;
+        orderCardCreate(orderItems);
+    })
+}
 
-// let orderKori = document.getElementsByClassName("orderBtn");
-// console.log(orderKori, "order");
+
+function orderCardCreate(element) {
+
+    // ......................................................................
+    document.getElementById("slideRegion").style.display = "none";
+    document.getElementById("titleSection").style.display = "none";
+    document.getElementById("product").style.display = "none";
+    document.getElementById("contace").style.display = "none";
+    // ...........................................................................
+
+    // ............................................................................
+    document.getElementById("orderProduct").style.display = "block";
+    // .........................................................................
+
+
+
+    console.log(element);
+    let [img, br1, br2, h3, br3, h4, p] = element;
+
+    const selectOrderProduct = document.getElementById("selectOrderProduct");
+
+    const createDiv = document.createElement("div");
+    createDiv.innerHTML = `
+      <div class="orderProductImgeJS"><img src="${img.currentSrc}">
+      </div>
+      <div>
+      <h1>${h3.innerText}</h1>
+      <h2>${h4.innerText}</h2>
+      <br>
+      <br>
+      <br>
+        <div style="display: flex">
+        <input type="number" id="quantity" name="quantity" min="1" max="100">
+        <select id="cars" name="cars">
+            <option value="Kg">কেজি</option>
+            <option value="Pcs">পিস্</option>
+            <option value="vati">ভাটি</option>
+        </select>
+        </div>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <div class="BackBtnDiv">
+        <button onclick="backBtn()">Back>></button>
+         </div>
+      </div>
+      
+`
+    createDiv.classList.add("orderItemDesign")
+
+    selectOrderProduct.appendChild(createDiv);
+};
+
+
+document.getElementById("backBtn").addEventListener("click", function () {
+    console.log("click me");
+})
+
+const backBtn = () => {
+    console.log("click the back  button")
+}

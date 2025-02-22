@@ -89,7 +89,6 @@ body {
     padding: 10px;
     border-radius: 20px;
     background-color: blue;
-    margin-right: -300px;
 }
 
 .user1 {
@@ -228,6 +227,22 @@ figure {
     }
 }
 
+/* ....................................................................... */
+.orderItemDesign {
+    display: flex;
+    position: relative;
+    top: 150px;
+    padding: 0px 0px 200px 50px;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.orderProductImgeJS>img {
+    width: 400px;
+    height: 300px;
+}
+
+/* ........................................................................... */
 .titleSection {
     background-color: black;
 }
@@ -241,6 +256,13 @@ figure {
     color: green;
     font-size: 30px;
     text-shadow: 2px 2px 2px red;
+}
+
+
+.footer-inOrderSection {
+    position: relative;
+    width: 100%;
+    bottom: -210px;
 }
 
 .allItemCard {
@@ -435,6 +457,29 @@ textarea {
     left: -40px;
 }
 
+
+
+
+/* ......................................................... */
+#orderProduct {
+    display: none;
+}
+
+
+
+/* .BackBtnDiv {
+    margin: 10px 50px;
+} */
+
+.BackBtnDiv>button {
+    background-color: blue;
+    padding: 10px 20px;
+    color: white;
+    font-size: 20px;
+    border-radius: 10px;
+    outline: none;
+    border: none;
+}
 /* ........................................................ */
 @media only screen and (max-width: 600px) {
     .logoSide>img {
@@ -481,10 +526,10 @@ textarea {
     }
 
     .userSide {
-        color: black;
+        display: flex;
+        color: blue;
         height: 20px;
         margin-top: 35px;
-        /* padding: 10px; */
         border-radius: 20px;
         display: none;
     }
