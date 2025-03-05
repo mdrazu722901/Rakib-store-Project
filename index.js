@@ -276,7 +276,24 @@ function productWithSubtotalPrice(product) {
 
         `
     allItemCardHereDiv.appendChild(crectProductShotList);
+
+    let allItemCardHere = document.getElementById("allItemCardHere");
+    let allItemCardHereLength = allItemCardHere.children.length;
+    console.log(allItemCardHereLength);
+
+    document.getElementById("cardItemCount").innerHTML = allItemCardHereLength;
 }
+
+
+
+
+
+
+
+
+
+
+
 const backBtn = () => {
     console.log("click the back  button")
     document.getElementById("slideRegion").style.display = "block";
