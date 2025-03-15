@@ -9,6 +9,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
         integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.2/html2pdf.bundle.min.js"
+        integrity="sha512-MpDFIChbcXl2QgipQrt1VcPHMldRILetapBl5MPCA9Y8r7qvlwx1/Mc9hNTzY+kS5kX6PdoDq41ws1HiVNLdZA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </head>
 
 <body>
@@ -31,7 +34,8 @@
                 </div>
                 <div class="userSide">
                     <i class="fa-solid fa-user user" id="userIcon"></i>
-                    <i class="fa-solid fa-cart-shopping user"><sup id="cardItemCount" style="background-color: black; padding: 4px; border-radius: 50px;">0</sup></i>
+                    <i class="fa-solid fa-cart-shopping user"><sup id="cardItemCount"
+                            style="background-color: black; padding: 4px; border-radius: 50px;">0</sup></i>
                 </div>
                 <div id="menuBar">
                     <i class="fa-solid fa-bars" id="menuBarIcon"></i>
@@ -85,33 +89,95 @@
     <section id="buyItemSection">
         <div id="forcardAddSection">
         </div>
-        <div id="allItemCardHere">
+        <div id="allItemCardHereMianDiv">
+            <h1>Purchase Product Card</h1>
+            <div id="allItemCardHere">
+            </div>
+            <div class="totalPrice">
+                <hr style="border: 2px solid black; margin-top: 90px;">
+                <h3>Total Price Here: <span id="TotalProductPrice"></span> </h3>
+                <div>
+                    <button style="width: 100%; margin-top:5px; padding:5px 5px; background-color: green;"
+                        id="conformBtn">Comform The Order</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="info">
+        <div id="InfoCollectSection">
+            <form id="form">
+                <label for="Name">নাম</label><br>
+                <input type="text" required><br>
+                <label for="Name">মোবাইল</label><br>
+                <input type="text" required><br>
+                <label for="Name">ই-মেইল</label><br>
+                <input type="text" required><br>
+                <label for="Name">আপনার মূল্যবান মন্তব্য</label><br>
+                <textarea name="" id="" cols="5" rows="5"></textarea>
+                <button style="padding: 10px 20px; border-radius: 5px;" id="FormSubmiteBtn">Submite</button>
+            </form>
         </div>
     </section>
 
 
+    <div id="meno-section">
+        <div id="showParchaseInfo">
+            <div id="contant">
+                <div class="showParchaseInfo-ProductDetails">
+                    <p>Product Name</p>
+                    <p>Product Quantity</p>
+                    <p>Product Price</p>
+                </div>
+                <br>
+            </div>
+            <br>
+            <hr>
+            <br>
+            <p class="TpirceClass">Total price of the Product: <b id="Tpirce"></b>tk</p>
+            <br>
+            <br>
+            <br>
+        </div>
+        <button id="aginConform&Download"
+            style="padding: 10px; background-color: gray; border-radius: 10px; box-shadow: 2px 2px 2px wheat; display: flex; justify-content: end;">Again
+            Conform & download</button>
+    </div>
     <!-- .................................................................................... -->
 
 
-    <section class="contact" id="contace">
-        <div class="contactDiv">
-            <div class="map">
+
+    <!-- ........................................successfull Massage show................................................. -->
+
+
+    <section id="seccessfullSection">
+        <div id="successfullDiv">
+           <img src="photo/Successfull.png" alt="">
+           <h3>Congratulation</h3>
+           <p>You Order Successfully Submite</p>
+           <button id="backHomeBtn">Back Home Page</button>
+        </div>
+        
+    </section>
+
+
+
+
+
+    <section id="LocationShareSection">
+        <div class="LocationAndText">
+            <div>
                 <iframe
                     src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d60480603.04811656!2d21.09723467955629!3d20.526992824371387!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sbd!4v1739978255449!5m2!1sen!2sbd"
                     width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
                     referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
-            <form action="">
-                <label for="Name">নাম</label><br>
-                <input type="text"><br>
-                <label for="Name">মোবাইল</label><br>
-                <input type="text"><br>
-                <label for="Name">ই-মেইল</label><br>
-                <input type="text"><br>
-                <label for="Name">আপনার মূল্যবান মন্তব্য</label><br>
-                <textarea name="" id="" cols="30" rows="10"></textarea>
-                <button type="submit" style="padding: 10px 20px; border-radius: 5px;">Submite</button>
-            </form>
+            <div>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Praesentium odit assumenda exercitationem
+                    architecto autem voluptatum possimus iusto ratione quisquam incidunt necessitatibus blanditiis,
+                    quaerat sed. Pariatur, numquam id quibusdam placeat, voluptas quod voluptatibus ut ipsam, nihil
+                    mollitia explicabo consectetur obcaecati at veritatis aperiam esse facere unde eveniet ex sequi
+                    harum quisquam!</p>
+            </div>
         </div>
     </section>
 

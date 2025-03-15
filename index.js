@@ -74,7 +74,6 @@ orderCardCreate(products);
 
 function allProduct(products) {
     const underProductSectionDiv = document.getElementById("underProductSection");
-    //    console.log(products.length, products[6])
 
     for (let i = 0; i < products.length; i++) {
         let element = products[i];
@@ -116,7 +115,7 @@ function orderCardCreate(allProduct) {
                 const underProductSectionDiv = document.getElementById("underProductSection").style.display = 'none';
                 const title = document.getElementById("titleSection").style.display = 'none';
                 const slideRegion = document.getElementById("slideRegion").style.display = 'none';
-                const contectSection = document.getElementById("contace").style.display = 'none';
+                const LocationShareSection = document.getElementById("LocationShareSection").style.display = 'none';
                 const aboutSection = document.getElementById("about").style.display = 'none';
                 const footerSection = document.getElementById("lastSection").style.display = 'none';
             }
@@ -125,25 +124,15 @@ function orderCardCreate(allProduct) {
 };
 
 function forCardAdd(product) {
-    // console.log(product);
     const selectProductSection = document.getElementById("forcardAddSection");
-
-    if (product.name == "জিলাফি" || product.name == "নিমকি") {
-    }
-
 
     const cardDivMake = document.createElement("div");
     cardDivMake.classList.add("card");
     cardDivMake.innerHTML = `
             <img src="${product.img}" alt="">
-            <br>
             <p>${product.id}</p>
-            <br>
             <h3>নাম:${product.name}</h3>
-            <br>
             <h4>দাম:${product.Pcs}</h4>
-            <br>
-            <br>
             <div style="display:flex">
             <input type="input" style="width:20px" id="input">
                 <select id="selectSection">
@@ -153,10 +142,7 @@ function forCardAdd(product) {
                     <option selected>select</option>
                 </select>
             </div>
-            <br>
             <p id="Subtotal"></p>
-                <br>
-                <br>
             <button id="addtoCard">কার্ডএ যুক্ত করি</button>
 `
     selectProductSection.appendChild(cardDivMake);
@@ -167,16 +153,12 @@ function forCardAdd(product) {
 
 function cardInfo(product) {
     document.getElementById("addtoCard").addEventListener("click", function () {
-        console.log(product);
 
         let inputFild = document.getElementById("input");
         let inputFildValueConvert = Number(inputFild.value);
 
 
         let selectSection = document.getElementById("selectSection");
-
-
-        console.log(selectSection.value)
 
         if (inputFildValueConvert && selectSection) {
             if (product.name == "জিলাফি" || product.name == "নিমকি") {
@@ -196,6 +178,7 @@ function cardInfo(product) {
                     else if (product.name == "নিমকি") {
                         let subtotal = inputFildValueConvert * 5
                         document.getElementById("Subtotal").innerText = subtotal;
+                        productWithSubtotalPrice(product)
                     }
                 }
                 else {
@@ -252,7 +235,7 @@ function cardInfo(product) {
             document.getElementById("Subtotal").innerText = error;
 
         }
-
+        subtotalPrice();
 
 
     })
@@ -268,45 +251,113 @@ function productWithSubtotalPrice(product) {
     const allItemCardHereDiv = document.getElementById("allItemCardHere");
     let crectProductShotList = document.createElement("div");
     crectProductShotList.classList.add("subtotalStyle")
+
     crectProductShotList.innerHTML = `
               <p>${product.name}</p>
               <p>${inputFild.value} ${selectSection.value}</p>
-              <p>${subtotal.innerText}</p>
-              
-
-        `
+              <p class="ProductPrice">${subtotal.innerText}</p>
+              <p><i class="fa-solid fa-trash delete"></i></p>
+              `
     allItemCardHereDiv.appendChild(crectProductShotList);
 
-    let allItemCardHere = document.getElementById("allItemCardHere");
-    let allItemCardHereLength = allItemCardHere.children.length;
-    console.log(allItemCardHereLength);
-
-    document.getElementById("cardItemCount").innerHTML = allItemCardHereLength;
+    let deleteIcon = document.getElementsByClassName("delete");
+    deleteBtnWork(deleteIcon)
 }
 
 
+function deleteBtnWork(deleteBtnArray) {
+
+    let deleteBtn = deleteBtnArray;
+    for (const element of deleteBtn) {
+        element.addEventListener("click", function (e) {
+            e.target.parentNode.parentNode.remove(e.target);
+            subtotalPrice();
+
+        })
+    }
+
+}
+
+function subtotalPrice() {
+    let allProducts = document.getElementById("allItemCardHere");
+
+    productCounter(allProducts.children);
+    let StorePrice = 0;
+    let allProductChildElements = allProducts.children;
+    for (const element of allProductChildElements) {
+        let [element1, element2, element3, element4] = element.children;
+        let priceNumberConvert = Number(element3.innerText);
+        StorePrice = priceNumberConvert + StorePrice;
+
+    }
+    document.getElementById("TotalProductPrice").innerText = StorePrice;
+    ShowPurchaseInfo(StorePrice, allProductChildElements);
+}
+
+function productCounter(countProduct) {
+    let count = countProduct.length;
+    document.getElementById("cardItemCount").innerHTML = count;
+}
 
 
+ConformBtnFunc();
+function ConformBtnFunc() {
+    document.getElementById("conformBtn").addEventListener("click", function () {
+        let allProducts = document.getElementById("allItemCardHere");
+        let Counter = allProducts.children.length;
+        if (0 < Counter) {
+            document.getElementById("InfoCollectSection").style.display = "block";
+            document.getElementById("buyItemSection").style.display = "none";
+            console.log(typeof Counter, Counter);
+        }
+        else {
+            alert("plase add one item in the card")
+        }
+    })
+}
 
+document.getElementById("meno-section").style.display = "none";
+finalMemoFunc();
+function finalMemoFunc() {
 
+    const form = document.getElementById("form");
+    form.addEventListener("submit", function (event) {
+        event.preventDefault();
 
-
-
-
-
-const backBtn = () => {
-    console.log("click the back  button")
-    document.getElementById("slideRegion").style.display = "block";
-    document.getElementById("titleSection").style.display = "block";
-    document.getElementById("product").style.display = "block";
-    document.getElementById("contace").style.display = "block";
-    // ...........................................................................
-
-    // ...........................................................................
-    document.getElementById("orderProduct").style.display = "none";
-    // ...........................................................................
-
-    let selectProduct = document.getElementById("selectOrderProduct");
-    selectProduct.remove(selectProduct.childNodes);
-    location.reload();
+        document.getElementById("info").style.display = "none"
+        document.getElementById("meno-section").style.display = "block";
+    })
 };
+
+function ShowPurchaseInfo(TotalProductPrice, allProductChildElements) {
+
+    let contant = document.getElementById("contant");
+    let makeProductInfo = document.createElement("div");
+    for (const element of allProductChildElements) {
+        let [element1, element2, element3, element4] = element.children;
+        console.log(element1);
+        makeProductInfo.innerHTML = `<p>${element1.innerText}</p>
+                                 <p>${element2.innerText}</p>
+                                 <p>${element3.innerText}tk</p>`;
+    }
+    makeProductInfo.classList.add("showParchaseInfo-ProductDetails")
+
+
+
+
+    contant.appendChild(makeProductInfo);
+    document.getElementById("Tpirce").innerText = TotalProductPrice;
+};
+
+
+window.onload = function () {
+    document.getElementById("aginConform&Download").addEventListener("click", function () {
+        const showParchaseInfo = document.getElementById("showParchaseInfo");
+        showParchaseInfo.style.padding = "150px 200px";
+        showParchaseInfo.style.marginLeft = "150px";
+        showParchaseInfo.style.fontSize = "20px";
+        html2pdf().from(showParchaseInfo).save();
+        document.getElementById("meno-section").style.display = "none";
+        document.getElementById("seccessfullSection").style.display = "block";
+    })
+}

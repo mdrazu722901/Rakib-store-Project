@@ -298,62 +298,71 @@ button:hover {
 #buyItemSection {
     padding: 150px 0px;
     display: flex;
-    justify-content: start;
+    margin-left: 200px;
 }
 
-#allItemCardHere {
-    background-color: white;
-    width: 200px;
-    height: 400px;
-    box-shadow: 2px 20px 100px gray;
+#allItemCardHereMianDiv {
+    background-color: pink;
+    width: 300px;
+    height: auto;
+    box-shadow: 2px 20px 100px black;
     border-radius: 5px;
     padding: 5px;
+    text-align: center;
     position: fixed;
     right: 10px;
 }
 
 /* ........................................................................................ */
-
-.contact {
-    background-color: palevioletred;
-    padding: 5px 10px;
-    margin-top: 10px;
+#info {
+    padding: 100px 0px 100px 0px;
 }
 
-.contactDiv {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 46px;
+#InfoCollectSection {
+    position: absolute;
+    width: 40%;
+    background-color: blueviolet;
+    box-shadow: 10px 10px 20px black;
+    padding: 50px;
+    margin: 100px 300px;
+    color: red;
+    border-radius: 10px;
+    display: none;
 }
 
-.map>iframe {
-    width: 100%;
-    height: 500px;
+#InfoCollectSection button {
+    display: block;
+    background-color: gray;
 }
 
 form {
-    width: 50%;
+    align-items: center;
+}
+
+.LocationAndText {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 30px;
+    gap: 80px;
+    background-color: palevioletred;
+}
+
+iframe {
+    width: 400px;
+    height: 300px;
+    border-radius: 10px;
 }
 
 input,
 textarea {
     width: 100%;
-    padding: 10px 10px;
+    padding: 5px;
     font-size: 20px;
     border-radius: 5px;
     outline: none;
     border: none;
-}
-
-.contactDiv {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 20px;
-    align-items: center;
-    justify-content: center;
+    background-color: slategrey;
 }
 
 .paments-section {
@@ -457,16 +466,6 @@ textarea {
     position: relative;
     top: -30px;
     left: -40px;
-}
-
-.BackBtnDiv>button {
-    background-color: blue;
-    padding: 10px 20px;
-    color: white;
-    font-size: 20px;
-    border-radius: 10px;
-    outline: none;
-    border: none;
 }
 
 /* ........................................................ */
@@ -584,4 +583,85 @@ textarea {
     box-shadow: 1px 1px 5px gray;
     padding: 5px 8px;
     border-radius: 5px;
+}
+
+/* ======================================Final Memo style=============================================== */
+#meno-section {
+    padding: 200px 100px 0px 100px;
+    background-color: gray;
+    width: 80%;
+    height: 500px;
+    margin: auto;
+    overflow: hidden;
+}
+
+#showParchaseInfo {
+    background-color: gray;
+    width: 80%;
+}
+
+#contant {
+    width: 60%;
+    margin: auto;
+}
+
+.showParchaseInfo-ProductDetails {
+    display: flex;
+    justify-content: space-between;
+}
+
+.TpirceClass {
+    display: flex;
+    justify-content: end;
+    padding-right: 224px;
+}
+
+b {
+    padding-left: 20px;
+}
+
+#aginConform&Download {
+    background-color: gray;
+    box-shadow: 2px 2px 2px white;
+    padding: 10px;
+}
+
+
+
+/* ............................................................. */
+#seccessfullSection {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    top: 200px;
+    left: 50%;
+    display: none;
+    /* padding-bottom: 50px; */
+}
+
+#successfullDiv {
+    padding: 100px;
+    width: 200px;
+    box-shadow: 5px 5px 15px gray;
+    border-radius: 5px;
+    text-align: center;
+}
+
+#successfullDiv>img {
+    width: 150px;
+    color: pink;
+}
+
+#backHomeBtn {
+    padding: 10px;
+    margin-top: 15px;
+    background-color: red;
+    border-radius: 5px;
+    border: none;
+
+}
+
+#backHomeBtn:hover {
+    box-shadow: 1px 1px 2px black;
 }
