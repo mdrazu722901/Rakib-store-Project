@@ -15,10 +15,11 @@
 </head>
 
 <body>
-    <marquee behavior="scroll" direction="left" style="background-color: red; position: fixed; z-index: 3;">হাজি জব্বার
+    <marquee behavior="scroll" direction="left" style="background-color: red; position: fixed; z-index: 3;"
+        id="HeadLine">হাজি জব্বার
         আলি মার্কেট/আবুর বাপের গোজ</marquee>
 
-    <section class="navigationSection" id="home">
+    <section class="navigationSection" id="Home">
         <nav class="mainContant position-set">
             <div class="innerNav">
                 <div class="logoSide">
@@ -26,15 +27,15 @@
                 </div>
                 <div class="menuSide">
                     <ul id="menu">
-                        <li><a href="#home" onclick="menuClick()">Home</a></li>
-                        <li><a href="#about" onclick="menuClick()">About</a></li>
-                        <li><a href="#product" onclick="menuClick()">Product</a></li>
-                        <li><a href="#contace" onclick="menuClick()">contact</a></li>
+                        <li><a href="#home" onclick="menuReloadBrowser()">Home</a></li>
+                        <li><a href="#about" onclick="menuReloadBrowser()">About</a></li>
+                        <li><a href="#product" onclick="menuReloadBrowser()">Product</a></li>
+                        <li><a href="#contace" onclick="menuReloadBrowser()">contact</a></li>
                     </ul>
                 </div>
                 <div class="userSide">
                     <i class="fa-solid fa-user user" id="userIcon"></i>
-                    <i class="fa-solid fa-cart-shopping user"><sup id="cardItemCount"
+                    <i class="fa-solid fa-cart-shopping user" id="shopCard" onclick="shopCard()"><sup id="cardItemCount"
                             style="background-color: black; padding: 4px; border-radius: 50px;">0</sup></i>
                 </div>
                 <div id="menuBar">
@@ -89,7 +90,7 @@
     <section id="buyItemSection">
         <div id="forcardAddSection">
         </div>
-        <div id="allItemCardHereMianDiv">
+        <div id="allItemCardHereMianDiv" class="allItemCardHereMianDiv-Class">
             <h1>Purchase Product Card</h1>
             <div id="allItemCardHere">
             </div>
@@ -151,12 +152,12 @@
 
     <section id="seccessfullSection">
         <div id="successfullDiv">
-           <img src="photo/Successfull.png" alt="">
-           <h3>Congratulation</h3>
-           <p>You Order Successfully Submite</p>
-           <button id="backHomeBtn">Back Home Page</button>
+            <img src="photo/Successfull.png" alt="">
+            <h3>Congratulation</h3>
+            <p>You Order Successfully Submite</p>
+            <button id="backHomeBtn" onclick="backHomeBtn()">Back Home Page</button>
         </div>
-        
+
     </section>
 
 

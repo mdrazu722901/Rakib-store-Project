@@ -38,25 +38,24 @@ document.getElementById("deleteMenu").addEventListener("click", function () {
 });
 
 
-function menuClick() {
-    if (screen.width === 600 || screen.width < 600) {
-        console.log("width 600 caught")
-        document.getElementById("deleteMenu").style.display = "none";
+// ...............................for-menu-responsive...........................
 
-        const menuBar = document.getElementById("menuBar");
-        menuBar.style.display = "block";
+if (screen.width === 600 || screen.width < 600) {
+    document.getElementById("deleteMenu").style.display = "none";
+
+    const menuBar = document.getElementById("menuBar");
+    menuBar.style.display = "block";
 
 
-        const menu = document.getElementById("menu");
-        menu.style.marginLeft = "-800px";
-        menu.style.transition = "0.1s";
-        menu.style.position = "absolute"
+    const menu = document.getElementById("menu");
+    menu.style.marginLeft = "-800px";
+    menu.style.transition = "0.1s";
+    menu.style.position = "absolute"
 
-        const user = document.getElementById("user");
-        user.style.display = "none";
-    }
-
+    const user = document.getElementById("user");
+    user.style.display = "none";
 }
+
 
 // ..................................................................................
 const products = [
@@ -70,7 +69,6 @@ const products = [
 ];
 
 allProduct(products);
-orderCardCreate(products);
 
 function allProduct(products) {
     const underProductSectionDiv = document.getElementById("underProductSection");
@@ -89,53 +87,42 @@ function allProduct(products) {
                 <br>
                 <h4>দাম:${element.Pcs}</h4>
                 <p>${element.Comment}</p>
-                <button class="orderBtn">অর্ডার করি</button>
+                <button class="orderBtn" onclick="orderCardCreate('${element.id}')">অর্ডার করি</button>
 `
 
         underProductSectionDiv.appendChild(cardDivMake);
     }
 }
 
-function orderCardCreate(allProduct) {
+function orderCardCreate(productID) {
 
-    let allBtn = document.getElementsByClassName("orderBtn");
+    const productSelect = products.filter(element => element.id == productID);
+    const findSelectProduct = productSelect[0];
 
-    for (let i = 0; i < allBtn.length; i++) {
+    const underProductSectionDiv = document.getElementById("underProductSection").style.display = 'none';
+    const title = document.getElementById("titleSection").style.display = 'none';
+    const slideRegion = document.getElementById("slideRegion").style.display = 'none';
+    const LocationShareSection = document.getElementById("LocationShareSection").style.display = 'none';
+    const aboutSection = document.getElementById("about").style.display = 'none';
+    const footerSection = document.getElementById("lastSection").style.display = 'none';
 
-        let btn = allBtn[i];
-        let product = allProduct[i];
-
-        btn.addEventListener("click", function (event) {
-            let orderBtnParentutton = event.target.parentNode.children;
-            let [img, br, p] = orderBtnParentutton;
-
-            if (p.innerHTML == product.id) {
-                forCardAdd(product);
-                cardInfo(product);
-                const underProductSectionDiv = document.getElementById("underProductSection").style.display = 'none';
-                const title = document.getElementById("titleSection").style.display = 'none';
-                const slideRegion = document.getElementById("slideRegion").style.display = 'none';
-                const LocationShareSection = document.getElementById("LocationShareSection").style.display = 'none';
-                const aboutSection = document.getElementById("about").style.display = 'none';
-                const footerSection = document.getElementById("lastSection").style.display = 'none';
-            }
-        })
-    }
+    makeProductCard(findSelectProduct)
 };
 
-function forCardAdd(product) {
+function makeProductCard(SelectedProduct) {
     const selectProductSection = document.getElementById("forcardAddSection");
 
-    const cardDivMake = document.createElement("div");
-    cardDivMake.classList.add("card");
-    cardDivMake.innerHTML = `
-            <img src="${product.img}" alt="">
-            <p>${product.id}</p>
-            <h3>নাম:${product.name}</h3>
-            <h4>দাম:${product.Pcs}</h4>
+    if (SelectedProduct) {
+        const cardDivMake = document.createElement("div");
+        cardDivMake.classList.add("card");
+        cardDivMake.innerHTML = `
+            <img src="${SelectedProduct.img}" alt="">
+            <p>${SelectedProduct.id}</p>
+            <h3>নাম:${SelectedProduct.name}</h3>
+            <h4>দাম:${SelectedProduct.Pcs}</h4>
             <div style="display:flex">
             <input type="input" style="width:20px" id="input">
-                <select id="selectSection">
+                <select id="selectFild">
                     <option id="kg">Kg</option>
                     <option  id="Pcs">Pcs</option>
                     <option id="vati">Vati</option>
@@ -145,40 +132,44 @@ function forCardAdd(product) {
             <p id="Subtotal"></p>
             <button id="addtoCard">কার্ডএ যুক্ত করি</button>
 `
-    selectProductSection.appendChild(cardDivMake);
+        selectProductSection.appendChild(cardDivMake);
+        cardInfo(SelectedProduct);
+    }
+
 }
 
 
 
 
 function cardInfo(product) {
+    console.log(product)
     document.getElementById("addtoCard").addEventListener("click", function () {
 
-        let inputFild = document.getElementById("input");
-        let inputFildValueConvert = Number(inputFild.value);
+        let input = document.getElementById("input");
+        let inputValue = Number(input.value);
 
 
-        let selectSection = document.getElementById("selectSection");
+        let selectFild = document.getElementById("selectFild");
 
-        if (inputFildValueConvert && selectSection) {
+        if (inputValue && selectFild) {
             if (product.name == "জিলাফি" || product.name == "নিমকি") {
-                if (selectSection.value == "Kg") {
-                    let subtotal = inputFildValueConvert * 200
+                if (selectFild.value == "Kg") {
+                    let subtotal = inputValue * 200
                     document.getElementById("Subtotal").innerText = subtotal;
 
-                    productWithSubtotalPrice(product)
+                    itemShortList(product)
                 }
-                else if (selectSection.value == "Pcs") {
+                else if (selectFild.value == "Pcs") {
                     if (product.name == "জিলাফি") {
-                        let subtotal = inputFildValueConvert * 10
+                        let subtotal = inputValue * 10
                         document.getElementById("Subtotal").innerText = subtotal;
 
-                        productWithSubtotalPrice(product)
+                        itemShortList(product)
                     }
                     else if (product.name == "নিমকি") {
-                        let subtotal = inputFildValueConvert * 5
+                        let subtotal = inputValue * 5
                         document.getElementById("Subtotal").innerText = subtotal;
-                        productWithSubtotalPrice(product)
+                        itemShortList(product)
                     }
                 }
                 else {
@@ -188,12 +179,12 @@ function cardInfo(product) {
             }
             else if (product.name == "সিংগারা" || product.name == "চমুচা" || product.name == "পরােটা") {
 
-                if (selectSection.value == "Pcs") {
+                if (selectFild.value == "Pcs") {
 
-                    let subtotal = inputFildValueConvert * 10
+                    let subtotal = inputValue * 10
                     document.getElementById("Subtotal").innerText = subtotal;
 
-                    productWithSubtotalPrice(product)
+                    itemShortList(product)
                 }
                 else {
                     let error = "Pcs Select Koren";
@@ -203,12 +194,12 @@ function cardInfo(product) {
 
             else if (product.name == "অঙ্গুলী") {
 
-                if (selectSection.value == "Kg") {
+                if (selectFild.value == "Kg") {
 
-                    let subtotal = inputFildValueConvert * 200
+                    let subtotal = inputValue * 200
                     document.getElementById("Subtotal").innerText = subtotal;
 
-                    productWithSubtotalPrice(product)
+                    itemShortList(product)
                 }
                 else {
                     let error = "Kg Select Koren";
@@ -217,12 +208,12 @@ function cardInfo(product) {
             }
             else if (product.name == "ভাজি") {
 
-                if (selectSection.value == "Vati") {
+                if (selectFild.value == "Vati") {
 
-                    let subtotal = inputFildValueConvert * 10
+                    let subtotal = inputValue * 10
                     document.getElementById("Subtotal").innerText = subtotal;
 
-                    productWithSubtotalPrice(product)
+                    itemShortList(product)
                 }
                 else {
                     let error = "vati Select Koren";
@@ -243,10 +234,10 @@ function cardInfo(product) {
 }
 
 
-function productWithSubtotalPrice(product) {
+function itemShortList(product) {
     let subtotal = document.getElementById("Subtotal");
-    let inputFild = document.getElementById("input");
-    let selectSection = document.getElementById("selectSection");
+    let input = document.getElementById("input");
+    let selectFild = document.getElementById("selectFild");
 
     const allItemCardHereDiv = document.getElementById("allItemCardHere");
     let crectProductShotList = document.createElement("div");
@@ -254,29 +245,26 @@ function productWithSubtotalPrice(product) {
 
     crectProductShotList.innerHTML = `
               <p>${product.name}</p>
-              <p>${inputFild.value} ${selectSection.value}</p>
+              <p>${input.value} ${selectFild.value}</p>
               <p class="ProductPrice">${subtotal.innerText}</p>
-              <p><i class="fa-solid fa-trash delete"></i></p>
+              <p><i class="fa-solid fa-trash deleteBtn"></i></p>
               `
     allItemCardHereDiv.appendChild(crectProductShotList);
+    let deleteBtn = document.getElementsByClassName("deleteBtn");
+    deleteBtnWork(deleteBtn)
 
-    let deleteIcon = document.getElementsByClassName("delete");
-    deleteBtnWork(deleteIcon)
 }
 
 
-function deleteBtnWork(deleteBtnArray) {
 
-    let deleteBtn = deleteBtnArray;
+function deleteBtnWork(deleteBtn) {
     for (const element of deleteBtn) {
         element.addEventListener("click", function (e) {
             e.target.parentNode.parentNode.remove(e.target);
             subtotalPrice();
-
         })
     }
-
-}
+};
 
 function subtotalPrice() {
     let allProducts = document.getElementById("allItemCardHere");
@@ -288,10 +276,9 @@ function subtotalPrice() {
         let [element1, element2, element3, element4] = element.children;
         let priceNumberConvert = Number(element3.innerText);
         StorePrice = priceNumberConvert + StorePrice;
-
     }
     document.getElementById("TotalProductPrice").innerText = StorePrice;
-    ShowPurchaseInfo(StorePrice, allProductChildElements);
+    return StorePrice;
 }
 
 function productCounter(countProduct) {
@@ -309,11 +296,12 @@ function ConformBtnFunc() {
             document.getElementById("InfoCollectSection").style.display = "block";
             document.getElementById("buyItemSection").style.display = "none";
             console.log(typeof Counter, Counter);
+            ShowPurchaseInfo();
         }
         else {
-            alert("plase add one item in the card")
+            alert("please add one item in the card")
         }
-    })
+    });
 }
 
 document.getElementById("meno-section").style.display = "none";
@@ -326,27 +314,38 @@ function finalMemoFunc() {
 
         document.getElementById("info").style.display = "none"
         document.getElementById("meno-section").style.display = "block";
+        homePage();
     })
 };
 
-function ShowPurchaseInfo(TotalProductPrice, allProductChildElements) {
-
+function ShowPurchaseInfo(allConformProducts) {
+    let ConformProductPrice = subtotalPrice();
     let contant = document.getElementById("contant");
-    let makeProductInfo = document.createElement("div");
-    for (const element of allProductChildElements) {
-        let [element1, element2, element3, element4] = element.children;
-        console.log(element1);
-        makeProductInfo.innerHTML = `<p>${element1.innerText}</p>
-                                 <p>${element2.innerText}</p>
-                                 <p>${element3.innerText}tk</p>`;
+
+    let allProducts = document.getElementById("allItemCardHere");
+
+    console.log(allProducts.children);
+    let productChild = allProducts.children;
+    for (const element of productChild) {
+
+        let createDiv = document.createElement("div");
+        createDiv.classList.add("showParchaseInfo-ProductDetails");
+
+        console.log(element);
+        let [e1, e2, e3, e4] = element.children;
+        console.log(e1.innerText);
+
+        createDiv.innerHTML = `
+         <p>${e1.innerText}</p>
+         <p>${e2.innerText}</p>
+         <p>${e3.innerText}</p>
+        `
+        contant.appendChild(createDiv);
     }
-    makeProductInfo.classList.add("showParchaseInfo-ProductDetails")
 
 
 
-
-    contant.appendChild(makeProductInfo);
-    document.getElementById("Tpirce").innerText = TotalProductPrice;
+    document.getElementById("Tpirce").innerText = ConformProductPrice;
 };
 
 
@@ -358,6 +357,33 @@ window.onload = function () {
         showParchaseInfo.style.fontSize = "20px";
         html2pdf().from(showParchaseInfo).save();
         document.getElementById("meno-section").style.display = "none";
+        document.getElementById("Home").style.display = "none";
+        document.getElementById("HeadLine").style.display = "none";
         document.getElementById("seccessfullSection").style.display = "block";
     })
+};
+
+const backHomeBtn = () => {
+    location.reload();
+}
+
+
+// ........................................shopCard.........................................
+
+const shopCard = () => {
+    orderCardCreate();
+    homePage();
+}
+
+let homePage = () => {
+    let shortLIstCard = document.getElementById("allItemCardHereMianDiv");
+    let checkClass = shortLIstCard.classList.contains("allItemCardHereMianDiv-Class");
+    console.log(checkClass)
+
+    if (checkClass) {
+        const menuReloadBrowser = () => {
+            location.reload();
+        }
+    }
+
 }
